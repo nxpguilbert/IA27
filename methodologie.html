@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Méthodologie · Observatoire IA</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">IA</span> Observatoire 2027 <small>· programmes passés au crible</small></a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#candidats">Programmes</a>
+      <a href="methodologie.html" aria-current="page" class="hide-sm">Méthodologie</a>
+      <button class="theme-btn" aria-label="Changer de thème">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" style="max-width:820px">
+  <section class="hero">
+    <div class="eyebrow">Méthodologie</div>
+    <h1>Comment lire ce site</h1>
+    <p class="lede">Les analyses publiées ici sont produites par des outils d'IA générative. Elles sont utiles pour défricher un programme, mais ne remplacent ni un chiffrage officiel, ni une expertise humaine.</p>
+  </section>
+
+  <section class="reveal" style="padding-top:0">
+    <h2>1. Le protocole</h2>
+    <div class="grid" style="gap:12px">
+      <div class="card"><h3>Consigne commune</h3><p class="ink2 small" style="margin:0">Chaque outil reçoit la même consigne, en mode « recherche approfondie » lorsque l'outil le propose. Exemple de prompt :</p>
+        <pre style="white-space:pre-wrap;background:var(--surface-2);padding:14px;border-radius:10px;font-size:.82rem;margin:12px 0 0">Analyse le programme économique 2027 de [candidat/parti]. Pour chaque mesure majeure :
+1. le chiffrage annoncé par le candidat ;
+2. les évaluations indépendantes disponibles (fourchette, source) ;
+3. les effets macroéconomiques attendus (croissance, emploi, déficit, dette) ;
+4. les obstacles juridiques (Constitution, droit de l'UE) ;
+5. les arguments favorables ET défavorables, avec sources.
+Reste factuel et neutre, cite chaque chiffre.</pre></div>
+      <div class="card"><h3>Extraction</h3><p class="ink2 small" style="margin:0">Les chiffres (montants annoncés, fourchettes indépendantes, projections) sont extraits manuellement du rapport et saisis dans un fichier de données par programme et par outil.</p></div>
+      <div class="card"><h3>Neutralisation du ton</h3><p class="ink2 small" style="margin:0">Les formulations militantes ou polémiques de l'IA sont reformulées. Le fond des conclusions est conservé et attribué à l'outil.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>2. Lire les graphiques</h2>
+    <div class="card">
+      <div class="legend"><span><i class="dot" style="background:var(--s-cand)"></i>Chiffrage du candidat (point = valeur unique, barre = fourchette)</span></div>
+      <div class="legend"><span><i style="background:var(--s-indep)"></i>Évaluation indépendante citée par l'IA (fourchette)</span></div>
+      <div class="legend"><span><i style="background:var(--muted)"></i>Valeur de référence (constat ou scénario tendanciel)</span></div>
+      <p class="ink2 small" style="margin:8px 0 0">Survolez les graphiques pour afficher le détail. Chaque graphique propose une vue « tableau » pour l'accessibilité.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>3. Les grilles de risque</h2>
+    <div class="card">
+      <p class="small ink2">Les niveaux de risque juridique ou économique sont ceux exprimés par l'IA. Ils sont représentés ainsi :</p>
+      <p style="display:flex;flex-wrap:wrap;gap:8px;margin:0">
+        <span class="status st-critical">● Très élevé / bloquant</span>
+        <span class="status st-serious">● Élevé</span>
+        <span class="status st-warning">● Modéré</span>
+        <span class="status st-good">● Faible</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>4. Limites connues</h2>
+    <div class="callout warn">
+      <ul class="small ink2" style="margin:0">
+        <li><strong>Hallucinations :</strong> une IA peut inventer un chiffre ou une source. Les liens sont fournis pour vérification.</li>
+        <li><strong>Biais de sources :</strong> la sélection des sources par l'IA peut favoriser certains think tanks.</li>
+        <li><strong>Données datées :</strong> les programmes évoluent ; chaque fiche indique la date de l'analyse.</li>
+        <li><strong>Une IA n'est pas un arbitre :</strong> les conclusions sont des avis argumentés, pas des faits établis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>5. Ajouter une analyse</h2>
+    <div class="card small ink2">
+      <ol style="margin:0;padding-left:1.2em">
+        <li>Créer <code>assets/js/data-&lt;parti&gt;.js</code> sur le modèle de <code>data-lfi.js</code> (recettes, dépenses, indicateurs clés, sources).</li>
+        <li>Dupliquer <code>programmes/lfi.html</code> et adapter les textes.</li>
+        <li>Dans <code>index.html</code>, renseigner l'URL et ajouter l'outil dans la liste <code>done</code> du programme.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Observatoire IA · Présidentielle 2027 — analyses générées par IA, à lire avec esprit critique.</span>
+    <span><a href="index.html">Accueil</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programme LFI 2027 · Observatoire IA</title>
+<meta name="description" content="Analyse du programme économique 2027 de La France insoumise produite par Gemini Deep Research, avec infographies interactives.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">IA</span> Observatoire 2027 <small>· programmes passés au crible</small></a>
+    <nav class="nav">
+      <a href="../index.html">Accueil</a>
+      <a href="../index.html#candidats" aria-current="page">Programmes</a>
+      <a href="../methodologie.html" class="hide-sm">Méthodologie</a>
+      <button class="theme-btn" aria-label="Changer de thème">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Fiche programme · Économie & finances publiques</div>
+      <h1>La France insoumise<br><span class="ink2" style="font-weight:600">Le « contre-budget » 2027 à l'épreuve</span></h1>
+      <p class="lede">Synthèse visuelle de l'analyse macroéconomique, budgétaire et institutionnelle du programme de Jean-Luc Mélenchon, produite par <strong>Gemini Deep Research</strong>. Les chiffres comparent le chiffrage du candidat aux évaluations d'organismes cités par l'IA.</p>
+      <div class="hero-meta">
+        <span class="pill"><span class="dot" style="background:var(--s-cand)"></span>Candidat : Jean-Luc Mélenchon</span>
+        <span class="pill">Programme : « L'Avenir en commun » / « Nouvelle France »</span>
+        <span class="pill">Analyse IA : Gemini Deep Research</span>
+        <span class="pill">Sources citées : 80</span>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="toc" aria-label="Sommaire">
+        <div class="toc-title">Sommaire</div>
+        <a href="#chiffres">Chiffres clés</a>
+        <a href="#budget">Le contre-budget</a>
+        <a href="#recettes">Recettes fiscales</a>
+        <a href="#simulateur">Simulateur d'assiette</a>
+        <a href="#depenses">Dépenses</a>
+        <a href="#macro">Relance & emploi</a>
+        <a href="#dette">Déficit & dette</a>
+        <a href="#juridique">Risques juridiques</a>
+        <a href="#bce">BCE & marchés</a>
+        <a href="#histoire">1981–1983</a>
+        <a href="#debat">Arguments en présence</a>
+        <a href="#conclusions">Conclusions</a>
+        <a href="#critique">Regard sur l'analyse IA</a>
+        <a href="#sources">Sources</a>
+      </aside>
+
+      <div>
+        <!-- ============ CHIFFRES CLÉS ============ -->
+        <section id="chiffres" class="reveal" style="padding-top:0">
+          <div class="grid g4">
+            <div class="card stat"><div class="label"><span class="swatch" style="background:var(--s-cand)"></span>Recettes nouvelles annoncées</div><div class="value">106,4 Md€</div><div class="sub">Année 1 (2027)</div></div>
+            <div class="card stat"><div class="label"><span class="swatch" style="background:var(--s-cand)"></span>Dépenses nouvelles annoncées</div><div class="value">81,7 Md€</div><div class="sub">Année 1 (2027)</div></div>
+            <div class="card stat"><div class="label"><span class="swatch" style="background:var(--s-cand)"></span>Amélioration du solde visée</div><div class="value">+25 Md€</div><div class="sub">Selon le contre-budget LFI</div></div>
+            <div class="card stat"><div class="label"><span class="swatch" style="background:var(--s-indep)"></span>Coût en pleine charge (2032)</div><div class="value">156,2 Md€</div><div class="sub">Estimation Trajectoires France, par an</div></div>
+          </div>
+        </section>
+
+        <!-- ============ CONTRE-BUDGET ============ -->
+        <section id="budget" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">1 · Cadre budgétaire</div>
+            <h2>Un équilibre affiché sur la première année</h2>
+            <p>Le contre-budget postule 106,4 Md€ de recettes supplémentaires pour 81,7 Md€ de dépenses nouvelles, dégageant 25 Md€. L'analyse souligne que ce périmètre ne couvre qu'une fraction du coût des engagements une fois montés en charge, dans un contexte de déficit à 5,1 % du PIB et de dette à 115,6 % en 2025.</p>
+          </div>
+          <div class="card chart-card">
+            <h3>Annoncé en 2027 vs coût en régime de croisière</h3>
+            <p class="chart-sub">Milliards d'euros par an</p>
+            <div class="legend"><span><i style="background:var(--s-cand)"></i>Chiffrage du candidat</span><span><i style="background:var(--s-indep)"></i>Évaluation indépendante</span></div>
+            <div class="chart" id="ch-budget"></div>
+          </div>
+        </section>
+
+        <!-- ============ RECETTES ============ -->
+        <section id="recettes" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">2 · Architecture fiscale</div>
+            <h2>Des recettes annoncées au-dessus des fourchettes indépendantes</h2>
+            <p>Sur les six principales mesures fiscales, le rendement annoncé totalise <strong>102 Md€</strong>. Les évaluations citées (Trajectoires France, IFRAP) le situent entre <strong>40 et 71 Md€</strong>. Seule la taxe sur les multinationales tombe dans la fourchette indépendante.</p>
+          </div>
+          <div class="grid" style="grid-template-columns:minmax(0,2fr) minmax(0,1fr)" id="rec-grid">
+            <div class="card chart-card">
+              <h3>Rendement par mesure</h3>
+              <p class="chart-sub">Survolez une ligne pour le détail et l'écart</p>
+              <div class="legend"><span><i class="dot" style="background:var(--s-cand)"></i>Rendement annoncé (LFI)</span><span><i style="background:var(--s-indep)"></i>Fourchette indépendante</span></div>
+              <div class="chart" id="ch-recettes"></div>
+              <div id="tb-recettes"></div>
+            </div>
+            <div class="card chart-card">
+              <h3>Cumul des six mesures</h3>
+              <p class="chart-sub">Milliards d'euros</p>
+              <div class="chart" id="ch-rec-total"></div>
+              <p class="small muted" style="margin-top:8px">Évaluation indépendante : bas et haut de fourchette cumulés.</p>
+            </div>
+          </div>
+          <style>@media (max-width:900px){#rec-grid{grid-template-columns:1fr!important}}</style>
+        </section>
+
+        <!-- ============ SIMULATEUR ============ -->
+        <section id="simulateur" class="reveal">
+          <div class="card">
+            <div class="eyebrow">Simulateur</div>
+            <h3>Et si l'assiette fiscale se contractait ?</h3>
+            <p class="ink2 small">L'analyse avance qu'une contraction d'environ 20 % de l'assiette attendue (optimisation, exil, baisse des dividendes) effacerait presque entièrement la marge de 25 Md€. Faites varier l'hypothèse ci-dessous.</p>
+            <div class="sim">
+              <div>
+                <label for="sim-range" class="small ink2">Contraction de l'assiette des 106,4 Md€ de recettes : <strong id="sim-pct">20 %</strong></label>
+                <input id="sim-range" type="range" min="0" max="50" step="1" value="20">
+                <div class="small muted" style="display:flex;justify-content:space-between"><span>0 % (aucune réaction)</span><span>50 %</span></div>
+              </div>
+              <div>
+                <div class="small ink2">Solde résiduel du contre-budget</div>
+                <div class="sim-out tnum" id="sim-out">+3,7 Md€</div>
+                <div class="sim-bar"><div id="sim-bar"></div></div>
+                <div class="small" id="sim-status"></div>
+              </div>
+            </div>
+            <p class="small muted" style="margin:14px 0 0">Calcul illustratif : solde = 106,4 × (1 − contraction) − 81,7. Il n'intègre ni effets de second tour, ni montée en charge des dépenses.</p>
+          </div>
+        </section>
+
+        <!-- ============ DÉPENSES ============ -->
+        <section id="depenses" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">3 · Choc de demande</div>
+            <h2>Des dépenses chiffrées sur un périmètre restreint</h2>
+            <p>Les écarts les plus forts portent sur la retraite à 60 ans (coût de transition chiffré par LFI vs pleine montée en charge) et sur la santé (recrutements vs « Sécurité sociale intégrale »). Le point d'indice et la garantie jeunesse font l'objet de chiffrages convergents.</p>
+          </div>
+          <div class="card chart-card">
+            <h3>Coût annuel par mesure</h3>
+            <p class="chart-sub">Milliards d'euros · le trait noir marque la médiane indépendante</p>
+            <div class="legend"><span><i style="background:var(--s-cand)"></i>Chiffrage du candidat</span><span><i style="background:var(--s-indep)"></i>Fourchette indépendante</span><span><i class="line" style="background:var(--ink);width:3px;height:12px"></i>Médiane</span></div>
+            <div class="chart" id="ch-depenses"></div>
+            <div id="tb-depenses"></div>
+          </div>
+        </section>
+
+        <!-- ============ MACRO ============ -->
+        <section id="macro" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">4 · Modélisation macroéconomique</div>
+            <h2>Multiplicateur, fuite par les importations et coût du travail</h2>
+            <p>La relance repose sur un multiplicateur budgétaire élevé. La littérature citée (méta-analyse Gechert 2015, 1 063 estimations) situe celui de la consommation publique autour de 0,76 à un an, une partie de la demande se reportant sur des biens importés.</p>
+          </div>
+          <div class="grid g2">
+            <div class="card chart-card">
+              <h3>Multiplicateur budgétaire à un an</h3>
+              <p class="chart-sub">Effet d'1 € de dépense publique sur le PIB</p>
+              <div class="chart" id="ch-mult"></div>
+            </div>
+            <div class="card chart-card">
+              <h3>SMIC à 1 600–1 700 € nets</h3>
+              <p class="chart-sub">Hausse nominale d'environ 14,4 %</p>
+              <div class="grid g2" style="gap:12px;margin-top:8px">
+                <div class="stat" style="padding:14px;background:var(--surface-2);border-radius:10px"><div class="label">Emplois privés menacés</div><div class="value" style="font-size:1.7rem">230 000 – 500 000</div><div class="sub">Gouvernement / Institut Montaigne</div></div>
+                <div class="stat" style="padding:14px;background:var(--surface-2);border-radius:10px"><div class="label">Chômage en 2030</div><div class="value" style="font-size:1.7rem">7,3 %</div><div class="sub">Modèle Nemesis (IFRAP), emplois publics inclus</div></div>
+              </div>
+              <p class="small ink2" style="margin:14px 0 0">Selon l'analyse, la baisse apparente du chômage tiendrait aux créations d'emplois publics et subventionnés, qui compenseraient les destructions dans le secteur marchand.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ DETTE ============ -->
+        <section id="dette" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">5 · Soutenabilité</div>
+            <h2>Un déficit vers 8,4 % et une dette vers 142 % du PIB</h2>
+            <p>Sous l'application du programme, les projections citées portent le déficit à 8,3–8,4 % du PIB à l'horizon 2030–2032 et la dette à 141,9 % du PIB en 2032, soit un surcroît de dette de 168,4 Md€ intérêts compris.</p>
+          </div>
+          <div class="grid g2">
+            <div class="card chart-card">
+              <h3>Déficit public</h3>
+              <p class="chart-sub">% du PIB</p>
+              <div class="legend"><span><i style="background:var(--muted)"></i>Référence</span><span><i style="background:var(--s-indep)"></i>Scénario programme (évaluation)</span></div>
+              <div class="chart" id="ch-deficit"></div>
+            </div>
+            <div class="card chart-card">
+              <h3>Dette publique</h3>
+              <p class="chart-sub">% du PIB</p>
+              <div class="legend"><span><i style="background:var(--muted)"></i>Référence</span><span><i style="background:var(--s-indep)"></i>Scénario programme (évaluation)</span></div>
+              <div class="chart" id="ch-dette"></div>
+            </div>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h3>L'effet « boule de neige »</h3>
+            <div class="formula">S<sub>p</sub> = (r − g) × D</div>
+            <p class="ink2 small" style="margin:0">Le solde primaire nécessaire pour stabiliser la dette (<em>S<sub>p</sub></em>) dépend de l'écart entre le taux d'intérêt apparent (<em>r</em>) et la croissance nominale (<em>g</em>), multiplié par le stock de dette (<em>D</em>). Quand <em>r &gt; g</em>, la dette s'auto-entretient. L'analyse estime que le programme réduirait <em>g</em> (choc fiscal sur l'investissement) tout en augmentant <em>r</em> (prime de risque).</p>
+          </div>
+        </section>
+
+        <!-- ============ JURIDIQUE ============ -->
+        <section id="juridique" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">6 · Faisabilité juridique</div>
+            <h2>Matrice des risques juridiques identifiés</h2>
+            <p>Niveaux de risque tels qu'évalués par l'analyse Gemini. Ils reflètent une lecture de la jurisprudence, pas une décision : d'autres juristes (ex. Institut Rousseau sur la dette BCE) défendent des lectures différentes.</p>
+          </div>
+          <div class="card table-scroll">
+            <table class="risk-table">
+              <thead><tr><th>Mesure</th><th>Fondement invoqué</th><th>Rendement en jeu</th><th>Risque évalué</th></tr></thead>
+              <tbody>
+                <tr><td>Impôt plancher de 2 % (patrimoines &gt; 100 M€)<span class="ref">≈ 4 000 foyers</span></td><td>Caractère confiscatoire · art. 13 DDHC · DC 2012-662 (seuil 70–75 %)</td><td class="tnum">15 Md€</td><td data-status="critical">Très élevé</td></tr>
+                <tr><td>Plafonnement de l'héritage à 12 M€</td><td>Droit de propriété « inviolable et sacré » · art. 17 DDHC</td><td class="tnum">20 Md€</td><td data-status="critical">Très élevé</td></tr>
+                <tr><td>Gel / annulation de la dette détenue par la BCE<span class="ref">≈ 600 Md€ (20 % du PIB)</span></td><td>Interdiction du financement monétaire · art. 123 TFUE · arrêts Pringle, Gauweiler, Weiss</td><td class="tnum">Charge d'intérêts</td><td data-status="critical">Bloquant</td></tr>
+                <tr><td>Taxe Zucman II (multinationales)</td><td>Conventions fiscales bilatérales, rétorsions</td><td class="tnum">26 Md€</td><td data-status="serious">Élevé</td></tr>
+                <tr><td>Suppression CIR / Pacte Dutreil</td><td>Risque économique (base productive) plus que juridique</td><td class="tnum">22 Md€</td><td data-status="warning">Modéré</td></tr>
+                <tr><td>Rétablissement de l'ISF</td><td>Déjà existé (jusqu'en 2017) ; plafonnement à 75 %</td><td class="tnum">10 Md€</td><td data-status="good">Faible</td></tr>
+                <tr><td>Suppression du PFU (flat tax)</td><td>Retour au barème, régime antérieur à 2018</td><td class="tnum">9 Md€</td><td data-status="good">Faible</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ BCE ============ -->
+        <section id="bce" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">7 · Souveraineté & marchés</div>
+            <h2>Dette BCE, notation et prime de risque</h2>
+            <p>Avec la fin des achats d'actifs de la BCE, le financement des déficits reposerait sur les marchés. L'analyse anticipe un écartement du spread OAT-Bund en cas de mise en œuvre.</p>
+          </div>
+          <div class="grid g4">
+            <div class="card stat"><div class="label">Dette française détenue par l'Eurosystème</div><div class="value">≈ 600 Md€</div><div class="sub">≈ 20 % du PIB</div></div>
+            <div class="card stat"><div class="label">Spread OAT-Bund en période de tension</div><div class="value">74–140 pb</div><div class="sub">Points de base, 10 ans</div></div>
+            <div class="card stat"><div class="label">Charge de la dette de l'État</div><div class="value">≈ 67 Md€</div><div class="sub">Par an, actuellement</div></div>
+            <div class="card stat"><div class="label">+1 point de taux sur 3 600 Md€</div><div class="value">+36 Md€</div><div class="sub">Par an, une fois toute la dette refinancée (calcul illustratif)</div></div>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h3>Notation de la France citée par l'analyse</h3>
+            <div class="table-scroll">
+              <table class="risk-table">
+                <thead><tr><th>Agence</th><th>Note</th><th>Perspective / évolution</th></tr></thead>
+                <tbody>
+                  <tr><td>Fitch</td><td class="tnum">A+</td><td>Perspective négative</td></tr>
+                  <tr><td>S&amp;P</td><td class="tnum">A+</td><td>Abaissée depuis AA−</td></tr>
+                  <tr><td>Moody's</td><td class="tnum">Aa3</td><td>Perspective négative</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ HISTOIRE ============ -->
+        <section id="histoire" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">8 · Parallèle historique</div>
+            <h2>Le précédent de la relance de 1981</h2>
+            <p>L'analyse rapproche le programme de la relance Mauroy. Différence majeure soulignée : la France de 1981 pouvait dévaluer le franc ; dans la zone euro, l'ajustement passerait par une « dévaluation interne » (chômage, baisse de l'investissement).</p>
+          </div>
+          <div class="card">
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-year">1981</div><p>Relance par la demande (≈ 1 % du PIB) : hausse du SMIC, 39 heures, retraite à 60 ans.</p></div>
+              <div class="tl-item"><div class="tl-year">1981–82</div><p>Dégradation de la balance commerciale, inflation, attaques contre le franc.</p></div>
+              <div class="tl-item"><div class="tl-year">1981–83</div><p>Trois dévaluations du franc ; mars 1983 : « tournant de la rigueur ».</p></div>
+              <div class="tl-item now"><div class="tl-year">2027</div><p>Zone euro : plus de levier monétaire national ; marchés et règles européennes comme contraintes.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ DÉBAT ============ -->
+        <section id="debat" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">9 · Arguments en présence</div>
+            <h2>Ce que défend le programme, ce qu'objecte l'analyse</h2>
+          </div>
+          <div class="versus">
+            <div class="card">
+              <h3 style="color:var(--s-cand)">Logique du programme</h3>
+              <ul class="ink2">
+                <li>Relance keynésienne par la consommation des ménages des premiers déciles, avec un multiplicateur censé autofinancer une partie des dépenses.</li>
+                <li>Taxation du capital, des très hauts patrimoines et des successions, jugés sous-imposés (taux effectif dégressif pour les 0,001 % les plus riches selon l'IPP).</li>
+                <li>Bifurcation écologique et planification comme colonne vertébrale (logement public, renouvelables).</li>
+                <li>Conversion de la dette détenue par la BCE pour libérer des marges d'investissement.</li>
+              </ul>
+            </div>
+            <div class="card contra">
+              <h3 style="color:var(--s-indep)">Objections de l'analyse</h3>
+              <ul class="ink2">
+                <li>Multiplicateur de la consommation publique ≈ 0,76 ; fuite vers les importations.</li>
+                <li>Bases fiscales mobiles et risque de censure constitutionnelle des mesures phares (36 Md€ concernés).</li>
+                <li>Hausse du SMIC : choc de coût pour les PME, 230 000 à 500 000 emplois privés menacés.</li>
+                <li>Art. 123 TFUE : gel de la dette BCE juridiquement proscrit ; hausse de la prime de risque.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ CONCLUSIONS ============ -->
+        <section id="conclusions" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">10 · Synthèse</div>
+            <h2>Les trois conclusions de Gemini</h2>
+          </div>
+          <div class="conclusions">
+            <div class="card conclusion"><div><h3>Des recettes difficilement atteignables</h3><p>Les principaux vecteurs (impôt plancher de 2 %, plafonnement de l'héritage) seraient exposés à la censure constitutionnelle, et l'élasticité des contribuables aisés réduirait les assiettes.</p></div></div>
+            <div class="card conclusion"><div><h3>Un choc d'offre sur l'emploi marchand</h3><p>Sans ajustement de change possible, la hausse du coût du travail pèserait sur la compétitivité des PME avant que la consommation induite ne se manifeste.</p></div></div>
+            <div class="card conclusion"><div><h3>Un risque de dérive souveraine</h3><p>Déficit vers 8,4 % du PIB, dette vers 142 %, sans financement monétaire possible : la sanction viendrait des agences et des marchés obligataires.</p></div></div>
+          </div>
+        </section>
+
+        <!-- ============ CRITIQUE ============ -->
+        <section id="critique" class="reveal">
+          <div class="callout warn">
+            <h3>⚠ Regard critique sur l'analyse produite par l'IA</h3>
+            <p class="small ink2">Cette fiche restitue une analyse générée par Gemini Deep Research. Avant de la comparer à d'autres outils, quelques points d'attention :</p>
+            <ul class="small ink2">
+              <li><strong>Ton normatif marqué.</strong> Le texte emploie des formules engagées (« aveuglement conjoncturel », « austérité d'une violence inouïe », « fiscalité destructrice », « programme d'extrême gauche ») qui relèvent du jugement plutôt que de l'analyse. La présente fiche les a neutralisées.</li>
+              <li><strong>Sources déséquilibrées.</strong> Les contre-arguments s'appuient surtout sur l'IFRAP, Fondapol, Trajectoires France ; les travaux favorables (Institut Rousseau, OFCE sur la taxation des riches, économistes proches du programme) sont cités mais peu discutés.</li>
+              <li><strong>Traces de génération inachevée.</strong> Des marqueurs « [cite: 187, 193-195] » subsistent dans le texte : certaines références n'ont pas été résolues.</li>
+              <li><strong>Chiffres non vérifiés.</strong> Les montants proviennent de sources secondaires agrégées par l'IA ; ils n'ont pas été recoupés indépendamment pour ce site.</li>
+              <li><strong>Lectures juridiques présentées comme certaines.</strong> « Censure quasi certaine » ou « inéluctable » anticipent des décisions qui n'existent pas encore.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ SOURCES ============ -->
+        <section id="sources" class="reveal">
+          <div class="section-head">
+            <div class="eyebrow">Sources</div>
+            <h2>Principales sources citées par l'analyse</h2>
+            <p class="small">Sélection parmi les 80 références du document original.</p>
+          </div>
+          <ol class="sources" id="sources-list"></ol>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Observatoire IA · Présidentielle 2027 — analyses générées par IA, à lire avec esprit critique.</span>
+    <span><a href="../methodologie.html">Méthodologie</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/charts.js"></script>
+<script src="../assets/js/data-lfi.js"></script>
+<script>
+(() => {
+  const { fmt, css } = Charts;
+  const ICONS = {
+    critical: '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 15 14H1z"/><rect x="7.2" y="5.5" width="1.6" height="4.6" fill="#fff"/><rect x="7.2" y="11" width="1.6" height="1.6" fill="#fff"/></svg>',
+    serious:  '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="7"/><rect x="7.2" y="3.8" width="1.6" height="5.4" fill="#fff"/><rect x="7.2" y="10.4" width="1.6" height="1.6" fill="#fff"/></svg>',
+    warning:  '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="7"/><rect x="4" y="7.2" width="8" height="1.6" fill="#fff"/></svg>',
+    good:     '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="7"/><path d="M4.6 8.2 7 10.5l4.4-4.6" stroke="#fff" stroke-width="1.8" fill="none"/></svg>',
+  };
+  document.querySelectorAll('[data-status]').forEach((td) => {
+    const s = td.dataset.status;
+    td.innerHTML = `<span class="status st-${s}">${ICONS[s]}${td.textContent}</span>`;
+  });
+
+  // 1. Budget
+  Charts.barH(document.getElementById('ch-budget'), [
+    { label: 'Recettes nouvelles (2027)', value: 106.4, color: css('--s-cand'), display: '106,4 Md€', note: 'Contre-budget LFI' },
+    { label: 'Dépenses nouvelles (2027)', value: 81.7, color: css('--s-cand'), display: '81,7 Md€', note: 'Contre-budget LFI — première année' },
+    { label: 'Dépenses en pleine charge', value: 156.2, color: css('--s-indep'), display: '156,2 Md€', note: 'Trajectoires France, horizon 2032, ensemble des mesures du programme' },
+  ], { max: 175, tickDigits: 0, measure: 'Montant annuel', aria: 'Recettes et dépenses du contre-budget' });
+
+  // 2. Recettes
+  Charts.rangeChart(document.getElementById('ch-recettes'), LFI.recettes, {
+    candLabel: 'Annoncé (LFI)', indepLabel: 'Évaluation indépendante', aria: 'Rendement des mesures fiscales',
+  });
+  Charts.dataTable(document.getElementById('tb-recettes'), ['Mesure', 'LFI (Md€)', 'Indépendant (Md€)'],
+    LFI.recettes.map((r) => [r.label, fmt(r.cand), Charts.rangeTxt(r.indep, '')]));
+
+  const sumLo = LFI.recettes.reduce((s, r) => s + r.indep[0], 0);
+  const sumHi = LFI.recettes.reduce((s, r) => s + r.indep[1], 0);
+  const sumC = LFI.recettes.reduce((s, r) => s + r.cand, 0);
+  Charts.columnChart(document.getElementById('ch-rec-total'), [
+    { label: 'Annoncé\n(LFI)', value: sumC, color: css('--s-cand'), display: fmt(sumC, 0) },
+    { label: 'Indépendant\n(bas)', value: sumLo, color: css('--s-indep'), display: fmt(sumLo) },
+    { label: 'Indépendant\n(haut)', value: sumHi, color: css('--s-indep'), display: fmt(sumHi) },
+  ], { height: 300, max: 120, measure: 'Cumul (Md€)', aria: 'Cumul des recettes' });
+
+  // 3. Simulateur
+  const rg = document.getElementById('sim-range');
+  const upd = () => {
+    const p = +rg.value / 100;
+    const solde = LFI.kpi.recettes * (1 - p) - LFI.kpi.depenses;
+    document.getElementById('sim-pct').textContent = rg.value + ' %';
+    const out = document.getElementById('sim-out');
+    out.textContent = (solde >= 0 ? '+' : '−') + fmt(Math.abs(solde)) + ' Md€';
+    const share = Math.max(0, Math.min(1, solde / LFI.kpi.soldeAnnonce));
+    const bar = document.getElementById('sim-bar');
+    bar.style.width = (solde >= 0 ? share * 100 : 100) + '%';
+    let s, label;
+    if (solde >= 15) { s = 'good'; label = 'Marge préservée'; }
+    else if (solde >= 5) { s = 'warning'; label = 'Marge entamée'; }
+    else if (solde >= 0) { s = 'serious'; label = 'Marge quasi effacée'; }
+    else { s = 'critical'; label = 'Le contre-budget creuse le déficit'; }
+    bar.style.background = css('--' + s);
+    document.getElementById('sim-status').innerHTML =
+      `<span class="status st-${s}">${ICONS[s]}${label}</span> <span class="muted">${fmt(share * 100, 0)} % des 25 Md€ visés</span>`;
+  };
+  rg.addEventListener('input', upd); upd();
+  document.addEventListener('themechange', upd);
+
+  // 4. Dépenses
+  Charts.rangeChart(document.getElementById('ch-depenses'), LFI.depenses, {
+    candLabel: 'Chiffrage LFI', indepLabel: 'Évaluation indépendante', aria: 'Coût des principales dépenses',
+  });
+  Charts.dataTable(document.getElementById('tb-depenses'), ['Mesure', 'LFI (Md€)', 'Indépendant (Md€)', 'Médiane'],
+    LFI.depenses.map((r) => [r.label, Charts.rangeTxt(r.cand, ''), Charts.rangeTxt(r.indep, ''), r.median ? fmt(r.median) : '—']));
+
+  // 5. Multiplicateur
+  Charts.barH(document.getElementById('ch-mult'), [
+    { label: 'Consommation publique / transferts', value: 0.76, color: css('--s-indep'), display: '≈ 0,76', note: 'Estimation OCDE à un an (revue OFCE / Gechert 2015)' },
+    { label: 'Investissement public', value: 1.0, color: css('--s-3'), display: '≈ 1 (moyen terme)', note: 'Peut avoisiner ou dépasser 1 à moyen terme grâce aux gains de productivité' },
+  ], { max: 1.25, refLine: { value: 1, label: 'Seuil m = 1' }, measure: 'Multiplicateur', aria: 'Multiplicateurs budgétaires' });
+
+  // 6. Déficit & dette
+  const ref = css('--muted'), sc = css('--s-indep');
+  Charts.columnChart(document.getElementById('ch-deficit'), [
+    { label: '2025\nconstaté', value: 5.1, color: ref, display: '5,1 %' },
+    { label: '2030–32\ntendanciel', value: 7.6, color: ref, display: '7,6 %', note: 'Scénario de référence sans le programme' },
+    { label: '2030–32\nprogramme', value: 8.35, color: sc, display: '8,3–8,4 %', note: 'Trajectoires France' },
+  ], { suffix: ' %', max: 10, measure: 'Déficit (% PIB)', aria: 'Déficit public' });
+  Charts.columnChart(document.getElementById('ch-dette'), [
+    { label: '2025\nconstaté', value: 115.6, color: ref, display: '115,6 %' },
+    { label: '2027\nprojection', value: 119.8, color: ref, display: '119,8 %', note: 'Projection OFCE citée' },
+    { label: '2032\nprogramme', value: 141.9, color: sc, display: '141,9 %', note: 'Surcroît de dette estimé : 168,4 Md€ (intérêts inclus)' },
+  ], { suffix: ' %', max: 160, measure: 'Dette (% PIB)', aria: 'Dette publique' });
+
+  // Sources
+  document.getElementById('sources-list').innerHTML = LFI.sources
+    .map(([t, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`).join('');
+})();
+</script>
+</body>
+</html>

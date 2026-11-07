@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Observatoire IA 2027</title>
+<meta name="description" content="Les programmes de la présidentielle 2027 analysés et comparés par plusieurs outils d'intelligence artificielle.">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">IA</span> Observatoire 2027 <small>· programmes passés au crible</small></a>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="#candidats">Programmes</a>
+      <a href="#matrice" class="hide-sm">Outils IA</a>
+      <a href="methodologie.html" class="hide-sm">Méthodologie</a>
+      <button class="theme-btn" aria-label="Changer de thème">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Présidentielle 2027 · Analyse comparée</div>
+    <h1>Les programmes présidentiels<br>passés au crible de l'IA</h1>
+    <p class="lede">Chaque programme est soumis à plusieurs outils d'intelligence artificielle (Gemini, ChatGPT, Claude, Perplexity, Mistral…). Nous restituons leurs analyses en infographies, comparons leurs conclusions et signalons leurs biais.</p>
+    <div class="hero-meta">
+      <span class="pill"><span class="dot" style="background:var(--s-cand)"></span>1 programme analysé</span>
+      <span class="pill">5 outils IA suivis</span>
+      <span class="pill">Mise à jour : novembre 2026</span>
+    </div>
+  </section>
+
+  <!-- À la une -->
+  <section class="reveal" style="padding-top:0">
+    <a class="card" href="programmes/lfi.html" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;text-decoration:none;color:inherit" id="feature">
+      <div>
+        <div class="eyebrow">À la une</div>
+        <h2>LFI : le « contre-budget » 2027 à l'épreuve</h2>
+        <p class="ink2">106,4 Md€ de recettes annoncées pour 81,7 Md€ de dépenses. L'analyse de Gemini Deep Research confronte ces chiffres aux évaluations indépendantes, au droit constitutionnel et aux règles européennes.</p>
+        <div class="ai-badges" style="margin-bottom:14px"><span class="ai-badge done">✓ Gemini Deep Research</span></div>
+        <span style="color:var(--accent);font-weight:600">Lire la fiche complète →</span>
+      </div>
+      <div>
+        <div class="legend"><span><i style="background:var(--s-cand)"></i>Recettes annoncées (LFI)</span><span><i style="background:var(--s-indep)"></i>Fourchette indépendante</span></div>
+        <div class="chart" id="teaser"></div>
+      </div>
+    </a>
+    <style>@media (max-width:820px){#feature{grid-template-columns:1fr!important}}</style>
+  </section>
+
+  <!-- Candidats -->
+  <section id="candidats" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Programmes</div>
+      <h2>Les programmes analysés</h2>
+      <p>Les fiches s'ajoutent au fur et à mesure de la publication des programmes et des analyses IA. Les candidatures restent à confirmer.</p>
+    </div>
+    <div class="grid g3" id="cand-grid"></div>
+  </section>
+
+  <!-- Matrice -->
+  <section id="matrice" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Couverture</div>
+      <h2>Qui a analysé quoi ?</h2>
+      <p>Chaque programme doit être soumis au même prompt dans chaque outil, afin de comparer les conclusions et de repérer les divergences entre IA.</p>
+    </div>
+    <div class="card table-scroll">
+      <table class="matrix" id="matrix"></table>
+    </div>
+  </section>
+
+  <!-- Comment -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Démarche</div>
+      <h2>Comment nous procédons</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="avatar" style="margin-bottom:12px">1</div><h3>Même consigne pour tous</h3><p class="ink2 small">Un prompt identique est soumis à chaque outil IA, en mode recherche approfondie quand il existe.</p></div>
+      <div class="card"><div class="avatar" style="margin-bottom:12px">2</div><h3>Extraction des chiffres</h3><p class="ink2 small">Les montants, fourchettes et conclusions sont extraits et mis en forme dans des infographies interactives.</p></div>
+      <div class="card"><div class="avatar" style="margin-bottom:12px">3</div><h3>Regard critique</h3><p class="ink2 small">Chaque analyse est accompagnée d'un encadré sur son ton, ses sources et ses limites. Les IA se trompent aussi.</p></div>
+    </div>
+    <p style="margin-top:16px"><a href="methodologie.html">Lire la méthodologie complète →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Observatoire IA · Présidentielle 2027 — analyses générées par IA, à lire avec esprit critique.</span>
+    <span><a href="methodologie.html">Méthodologie</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/data-lfi.js"></script>
+<script>
+(() => {
+  const TOOLS = ['Gemini Deep Research', 'ChatGPT Deep Research', 'Claude Research', 'Perplexity Deep Research', 'Mistral Le Chat'];
+  const SHORT = ['Gemini', 'ChatGPT', 'Claude', 'Perplexity', 'Mistral'];
+  const PROGRAMMES = [
+    { id: 'lfi', parti: 'La France insoumise', candidat: 'Jean-Luc Mélenchon', sigle: 'LFI', url: 'programmes/lfi.html', done: ['Gemini Deep Research'] },
+    { parti: 'Rassemblement national', candidat: 'Candidature à confirmer', sigle: 'RN', done: [] },
+    { parti: 'Renaissance', candidat: 'Candidature à confirmer', sigle: 'RE', done: [] },
+    { parti: 'Horizons', candidat: 'Candidature à confirmer', sigle: 'HOR', done: [] },
+    { parti: 'Les Républicains', candidat: 'Candidature à confirmer', sigle: 'LR', done: [] },
+    { parti: 'Parti socialiste', candidat: 'Candidature à confirmer', sigle: 'PS', done: [] },
+    { parti: 'Les Écologistes', candidat: 'Candidature à confirmer', sigle: 'EELV', done: [] },
+    { parti: 'Parti communiste français', candidat: 'Candidature à confirmer', sigle: 'PCF', done: [] },
+    { parti: 'Reconquête', candidat: 'Candidature à confirmer', sigle: 'REC', done: [] },
+  ];
+
+  document.getElementById('cand-grid').innerHTML = PROGRAMMES.map((p) => {
+    const ok = p.done.length > 0;
+    return `<a class="card cand-card ${ok ? '' : 'pending'}" ${ok ? `href="${p.url}"` : 'aria-disabled="true"'}>
+      <div class="cand-top"><div class="avatar">${p.sigle}</div><div><div class="cand-name">${p.parti}</div><div class="cand-party">${p.candidat}</div></div></div>
+      <div class="ai-badges">${TOOLS.map((t, i) => `<span class="ai-badge ${p.done.includes(t) ? 'done' : ''}">${p.done.includes(t) ? '✓ ' : ''}${SHORT[i]}</span>`).join('')}</div>
+      <div class="small ${ok ? '' : 'muted'}" style="margin-top:auto">${ok ? `<span style="color:var(--accent);font-weight:600">${p.done.length}/${TOOLS.length} analyses · voir la fiche →</span>` : 'Analyse à venir'}</div>
+    </a>`;
+  }).join('');
+
+  document.getElementById('matrix').innerHTML =
+    `<thead><tr><th>Programme</th>${SHORT.map((s) => `<th>${s}</th>`).join('')}</tr></thead><tbody>` +
+    PROGRAMMES.map((p) => `<tr><td><strong>${p.sigle}</strong> <span class="muted small">${p.parti}</span></td>${TOOLS.map((t) =>
+      p.done.includes(t) ? `<td><a class="cell-done" href="${p.url}">✓ Fait</a></td>` : '<td class="cell-todo">—</td>').join('')}</tr>`).join('') + '</tbody>';
+
+  Charts.rangeChart(document.getElementById('teaser'), LFI.recettes.slice(0, 4), {
+    candLabel: 'Annoncé (LFI)', indepLabel: 'Évaluation indépendante', aria: 'Aperçu des recettes fiscales',
+  });
+})();
+</script>
+</body>
+</html>
